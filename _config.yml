@@ -19,3 +19,14 @@ github_username:  Ziyi-Guo
 
 # Build settings
 markdown: kramdown
+
+# other config
+timezone: Europe/Helsinki
+
+#defaults for posts
+defaults:
+ -
+  scope:
+    path: "_posts"
+  values:
+    layout: "post"
