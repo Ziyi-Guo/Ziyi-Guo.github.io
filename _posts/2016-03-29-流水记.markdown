@@ -1,0 +1,40 @@
+---
+layout: post
+title: 流水记0329
+categories: Note
+---
+得着，多少事儿都是一时兴起给折腾起来，第二天给扔下了？
+尤其写东西一条，好象是从没坚持写东西超过连续3天？还得是包括日记的。前好几天梦啊什么的，而且想把这个弄成技术博客，所以啊这会儿开始，每天写点儿什么东西，从流水开始。
+
+2016.03.29. 起床甚早，刚刚起来那会儿8:45,太阳正好晒在我家窗户，窗户大还是好，窗帘一拉地上全是光斑，好看。起床刷牙洗脸煮咖啡烤早饭，开始干活。
+
+前几晚突然兴起写了个东西，从[Pornhub](http://www.pornhub.com/ "欧洲1024")抓取某个视频列表里的所有视频下载地址，顺带着使用uget进行下载，下面大概说下逻辑：
+
+{% highlight python %}
+def anal_playlist_url(string): 	# 传入string为视频列表地址
+	import requests		# 之前采用urllib2,外引包，考虑尽量少折腾，python自带
+	r = requests.get(string)
+	html = r.content 	# 下面进行视频地址检出并写入文件
+	t = html.split('<a href=\"')
+	t = [s for s in t if 'view_video' in s and 'data-related-url' not in s]
+	video_url = [s[:s.index('&pkey')] for s in t]
+	video_url = [ "http://www.pornhub.com"+ s + '\n' for s in video_url]
+	f = open('pornhub_video_url.txt','w')
+	f.writelines(video_url)
+	f.close()
+def get_downlod_link(file_name): 	# 这是从视频地址进行下载
+	from requests import session	# 还是用requests，发送登陆
+	pyload={'action':'login','username':'shomothe','password':'way2good'}
+	download_url = []
+	with session() as c:
+		c.post('http://www.pornhub.com/login',data=pyload) # login to get download right
+		f = open('pornhub_video_url.txt')	# 读取视频地址
+		urls = f.readlines()
+		f.close()
+		# 下面的就是访问页面，解析html，与上面不差很多，不细说
+{% endhighlight %}
+用这小东西抓了在2013年左右极为闻名的Park Nima的全集，用迅雷给批量下了，比国内找资源的确方便很多。:-p
+
+一个番茄时间结束，只写了这个，那就停在这儿，附上代码地址[Pornhub_playlist_download](https://github.com/Ziyi-Guo/Fun_things "基哈")
+
+这会儿小姑娘还在德国，希望安全。
