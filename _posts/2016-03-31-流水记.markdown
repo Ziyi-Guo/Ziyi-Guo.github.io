@@ -1,0 +1,44 @@
+---
+style: post
+title: 流水记03-31
+categories: Note
+---
+现在已经是4月1日凌晨1点了，接到yq，回到家里，心情愉快。
+
+早晨起床，学习了一会儿Computer Vision，内心纠结，感觉不甚舒服，可能要挂，晚上已经大致决定不参加考试了，5th Period再选课说。
+
+于是11点左右去yq家，趁着她尚未回来，给她打扫了屋子，全部都清理了一下，洗干净了被单床罩以及衣服，拖干净了地板，收拾了地板上的头发，收拾干净感觉很爽。她应该喜欢。
+
+中午在tf吃了饭，kebab挺好吃，吃得很饱肚子。吃完饭到Smokki楼顶晒了太阳，不知道是谁在什么时候把一个沙发床搬到了楼顶，躺在那儿甚爽，还做了个[图][pic]。
+然后背包到ayy办公室问了Sauna的事情，只能订到5月份的了，不好，没有订。
+
+到主楼的Learning Hub里面自习，继续学Python，做了三天的作业。
+
+-  生成随机有数字和字母组成的字符串，string.ascii_lower & upper & digits，随机选择
+-  写入mysql等关系型数据库，connect之后insert
+-  写入redis等非关系型数据库，这个难倒我了
+
+
+Redis难倒我了，顺便学习了一下redis，以下摘抄:
+-  set key value (set myage 22)
+-  incr key (incr myage will turn myage into 23)
+-  # using incr instead of 'x = get key; x = x + 1; set key x', as incr is atomic 
+-  expire key value (expire myage 120)
+-  ttl key
+-  # set and get the time of expiration, if not set, never expires.
+-  # return value -2 means don't exist, -1 means never expires
+-  lpush list sth + rpush list sth
+-  lrange list start_index end_index
+-  llen list 
+-  lpop list + rpop list
+-  # action for list
+-  sadd setname 'sth' + srem setname 'sth' + sismember namelist 'sth' (return 1 for yes and 0 for no)
+-  smembers setname (show all the members) + sunion setname1 setname2 (add two sets together)
+-  # actions for set, and sorted set with zadd 
+-  hset obj_name attr value [ recursive with attr value ] (hash set for an object) + hgetall obj_name
+
+真难.
+
+这会儿去吃晚饭,烧的红烧肉,好吃.今晚到这儿.
+
+---2016.03.01
