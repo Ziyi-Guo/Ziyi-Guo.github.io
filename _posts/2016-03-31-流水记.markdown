@@ -20,6 +20,7 @@ categories: Note
 
 
 Redis难倒我了，顺便学习了一下redis，以下摘抄:
+
 -  set key value (set myage 22)
 -  incr key (incr myage will turn myage into 23)
 -  # using incr instead of 'x = get key; x = x + 1; set key x', as incr is atomic 
