@@ -1,0 +1,31 @@
+---
+style: post
+title: 流水记-04-02
+categories: Note
+---
+#今天是干活也玩到的一天,很爽!
+
+昨晚睡觉太晚了,招呼好张敏回来睡觉接近4点,早上12点多才醒,太晚了.<h6>苟且了一番</h6>之后去cs吃饭已经在下午2点多了.午饭是鱼排(?),和Sergeiv一起吃的,挺开心,我们在聊语言方面的事情,我还给念了一下俄语的[喀秋沙Катюша](https://zh.wikipedia.org/wiki/喀秋莎)词,他们(Rodion)一下就猜出来了,这在俄国也是很有名的歌曲.顺便学了几句俄语,比如说Spasibo(thank you),Pozhaluysta(You're welcome).
+
+然后给受伤的Himanshu(Poor Indian)买了点食物送了过去,这货真是有意思,倒立没站稳,砸到旁边的抽屉把手(a little bit miscalculate). 不过我们都知道他还会做这样的事情(not in 2-3 months),希望他不会这样把自己提早送进印度诸神的怀中.
+
+晒太阳,虽然晒了不是很久,风很大,但因为没风的时候太阳晒起来很暖和,也很开心(顺便一提我还带上了我的墨镜).回家之后有些困顿,就喝了咖啡逛了会儿论坛歇一会儿(勇士主场终于一败,凯尔特人),然后干活儿.
+
+把[Show-me-the-code](http://github.com/show-me-the-code/show-me-the-code)里面的题目往后写了4题左右,很有意思的题目有一个生成随机字符串图片的.如下:
+
+{% highlight python %}
+def write_text(self):
+	''' get drawer, for every letter, random color, write letters, blur it '''
+	d = ImageDraw.Draw(self.im) 
+	im_size = self.im.size
+	for i in range(self.str_len):
+		txt_cl = random.sample(range(0,255),4) # 随机生成字符的颜色与透明度
+		# 按照顺序写入图片
+		d.text((10 + i*300/self.str_len,10),self.str[i],font=self.font,fill=(txt_cl[0],txt_cl[1],txt_cl[2],txt_cl[3]))
+	self.im = self.im.filter(ImageFilter.BLUR) # 对图片进行模糊化处理.
+{% endhighlight %}
+然后停在了一个爬照片的题目上(很像我那个爬Pornhub视频的程序),太晚,不写了,明天继续,并且开始复习AI.
+
+晚饭是yq的红烧肉,加了一些年糕和豆泡,很好吃.
+
+顺便,又开始读鲁迅先生的<故事新编>,初中时候就读过,这次复读. ---2016-04-02
