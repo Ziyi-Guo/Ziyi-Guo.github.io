@@ -5,4 +5,49 @@ categories: Note
 ---
 # 昨天没写,愧疚.
 
-大致记录昨天:<h2>钱到帐了</h2>心情好好好好.中午到Engineer楼吃饭之后到
+大致记录昨天:**钱到帐了**心情好好好好.中午到Engineer楼吃饭之后到Learning hub工作,下午4点多帮Himanshu买了东西拿给他,也就是这个时候发现到帐了的,不穷的感觉很好.晚饭在Alvari,吃完到Tapiola问了游泳池的事情,并不贵,一次才2.5euro,买个锁也能重复,但是看了泳裤和泳镜,加在一起要30euro,有点迟疑.晚上回来在LearningHub玩了一会儿就回家了,到jmt3楼上蹭Sauna,10点多下来在yq家自习,然后晚上在这儿睡下了.
+<!---  '昨晚尝试了人生中第一次内射,不可谓不爽,但是一想到后果就会内心有点儿肝儿颤' --->
+
+今天直到12点才醒来,最近不知道怎么了,想实习想疯了,总感觉在睡觉的时候会有人给我发邮件告诉我,小伙子你被录取了,然后睡醒之后一查,什么都没有.这个白日梦有非常不良的后果,就是我最近查邮件的频率明显上升,这可不好.但是我决定,7号考完试**继续多申请几家,并申请延长居留**,努力提高中奖率.
+
+下午回到家也是,感到十分困顿,自己又去睡了一个半小时.起来之后也在逛论坛,丝毫没有想要写东西的想法.快到晚饭才开始做Flask的东西,晚上吃完饭又加了劲儿写了个留言板出来,贴上代码:
+
+{% highlight python %}
+# database things
+def connect_db():	# 获取sqlite数据库链接
+	return sqlite3.connect(app.config['DATABASE'])
+
+def init_db():		# 初始化数据库
+	with closing(connect_db()) as db:
+		with app.open_resource('schema.sql',mode='r') as f:
+			db.cursor().executescript(f.read())
+		db.commit()
+@app.before_request	
+def before_request():
+	g.db = connect_db()
+@app.teardown_request
+def teardown_request(exception):
+	db = getattr(g,'tb',None)
+	if db is not None:
+		db.close()
+# 以下为页面业务处理
+@app.route('/')
+def show_msgs():	# 显示留言板信息
+	cur = g.db.execute('select name,comment,time from Message order by id desc')
+	msgs = [dict(name=row[0],comment=row[1],time=row[2]) for row in cur.fetchall()]
+	return render_template('show_msgs.html',entries=msgs)
+
+@app.route('/add',methods=['POST'])
+def add_msg():		# 新留言
+	data = [request.form['name'],request.form['comment'],str(datetime.now())]
+	g.db.execute('insert into Message(name,comment,time) values (?,?,?)',data)
+	g.db.commit()
+	flash('New comment was successfully posted!')
+	return redirect(url_for('show_msgs'))
+{% endhighlight %}
+
+晚饭是红烧肉,我们真是越来越熟练,流程很熟悉了,做的也是一如既往的好吃.俩人吃了700克肉,好吃.但是味道真大.....
+
+内心再次动摇,竟然因为搜索引擎之争更加不喜欢国内一些...不知道这到底算不算哪门子鸟理由.
+
+继续Python学习咯,26个练习完成了24个了,现在在做SpeechToText,有个Web Todo还没做,发现自己有点懒...
