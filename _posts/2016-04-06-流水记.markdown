@@ -1,0 +1,42 @@
+---
+style: post
+title: 流水记-04-06
+categories: Note
+---
+昨晚睡不着的时候,内心波动的厉害,想得全是找不到实习怎么办,Domo也催了两天要终止租约,临睡之前下了决定今天就回复Domo,5月底就终止租约,***这句话之后的一个小时里我都在搞输入法的事情,吸取教训啊!!快赚钱买Mac啊!生产工具不是折腾你的东西啊!!!!***虽然波折了一番,还是提交了终止消息,5月底还给ayy房子.
+
+今天真是波折的一天啊,尤其是在折腾了中文输入法之后.中午到食堂吃了意面,吃了好多心理开心!然后到Learning Hub学习去了,下午和晚上都在看AI的东西,现在复习到的列表:
+
+-  Search, BFS, DFS, Iterative Deepening, A\*, IDA\*,WA\*
+-  Logic, Planning, Propositional Logic, PDDL, Model in Logic, Sets, Relations
+-  Uncertainty, Utility Theory, Calculations, Expectimax tree search ( draw a tree ), Partial Observability ( Bayes ), Exploration vs Exploition, UCB1
+-  Adversarial Search, multi-agents, Minimax, alpha-beta pruning, Horizon effect,
+-  Sequential decision, MDP, Value / Policy Iteration, Bellman equation, Reinforcement Learning ( wtf is this! )
+-  Game Theory, strategies, Nash equilibrium ( idk wat it is ), Multi stage games.....
+-  Monte Carlo tree search, UCB implement on this --> UCT 
+
+差不多今天看到的就这些,妈的好多还没懂呢...
+
+晚上回来之后,顺便把Python的25th作业给做了,Voice2Text,然后浏览器打开. 用了一个挺神奇的包,SpeechRecognition,使用简单:
+{% highlight python %}
+import speech_recognition as sr
+r = sr.Recognizer()
+
+with sr.AudioFile(file_name) as source:
+	audio = r.record(source)
+try:
+	txt = r.recognize_google(audio)
+	print "Google thinks you're saying \'",txt,"\'"
+except sr.UnknownValueError:
+	print "Google can't recognize."
+{% endhighlight %}
+
+还可直接从Mic录音读数据,
+{% highlight python %}
+with sr.Microphone() as source:
+	print "Speak:"
+	audio = r.listen(source)
+{% endhighlight %}
+
+时间就到这里,明天考试加油.
+---2016-04-06
