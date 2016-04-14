@@ -35,4 +35,7 @@ categories: Note
 
 到这里, 今天加油!
 
+科比退役了....
+===
+
 [pic]: {{base}}/assets/jmt106.jpg
