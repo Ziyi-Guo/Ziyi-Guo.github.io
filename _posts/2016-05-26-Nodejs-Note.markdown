@@ -1,6 +1,6 @@
 ---
 sytle: post
-title: NodeJs Note
+title: Note on Node.js
 categories: Dev
 ---
 Node.js is a framework allows you to build net applications using js on server-side
