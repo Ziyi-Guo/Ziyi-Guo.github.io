@@ -1,0 +1,59 @@
+---
+style: post
+categories: Dev
+title: Note on MongoDB
+---
+Relational, save data in rows within tables.
+
+MongoDB, save data in documents within collections.
+
+basic things
+
+	db.collectionName.insert({"data":"Json like data"});
+	db.collectionName.find();
+	db.collectionName.find({"fieldName":"fieldValue"}); # case sensative
+	// multiple query can be made in same find
+	// common comparisons: $gt, $lt, $gte, $lte, $ne
+	// Array query operator,range query in array is like find("size":{"$elemMatch":{"$gt":8,"$lt":16}}), array act different than the document
+	
+	// second params for find, to select the fields to show, {"fName1":true,"fName2":true} will set unselected ones to false.
+	// or {"fName1":false,"fName2":false} will set unchoosen one be true
+	// only have true & false when set _id to false
+
+	// find will return a cursor obj which contains 20 doc/block
+	cursor.sort({"field":order})
+	cursor.skip($x).limit($y)	
+
+	db.collectionName.remove({"fieldName":"fieldValue"});
+	db.collectionName.update({"fieldName":"fieldValue"},{"$set":{"updateField":"updateValue"}}); // update a field of the first match, a third param {"multi": true} will update all
+	db.collectionName.update({"fieldName":"fieldValue"},{"$inc":{"updateField": incValue}}); //set third patam as {"upsert":true} to create a new field if not exist
+	// $unset to remove a field, $rename to rename a field
+	// use dot+index to update a ele in an array,
+	// or positional operator .$ to alert, but only for the first match per document
+	// $max to update if new value is > old, $min the reverse, $mul to multiply
+	// $pop to remove the 1st or last of an array, $push to add a value to the end of array
+	// $addToSet to add it if only it's not added
+	// $pull to remove from array
+	db.collectionName.update({"fName":"fValue"},{"uName":"uValue"}); // this is for overwriting
+
+Embedded Documents and References, former will keep the data together, and modify together, while later can keep data rid of duplication, but should be taken great care on write.
+
+1. Is data using togehter ? if always together, Embed is best choice ,otherwise they're not much different 
+
+2. What's the size of the data, small size will fit embed best, large size like thousands better choose Reference
+
+3. Will the data change often? if not, using Embed, if very often, reference
+
+**Aggregation** (take stage operators)
+
+	db.collectionName.aggregate([{"$group":{"_id":"$groupField","accum":{"$stageOperator":"$field"}}}]);
+
+Aggregation pipeline:
+	
+	db.wands.aggregate([
+  	{"$match":{"level_required":{"$lte":5}}},
+  	{"$project":{"maker":true,"damage.magic":true,"_id":false}},
+  	{"$group":{"_id":"$maker","max_damage":{"$max":"$damage.magic"}}},
+ 	 {"$sort":{"max_damage":-1}},
+  	{"$limit":4}
+	])
