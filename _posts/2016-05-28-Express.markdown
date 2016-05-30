@@ -1,0 +1,33 @@
+---
+style: post
+title: Note on Express
+categories: Dev
+---
+Exress is a web application framework for Nde
+
+send funtion of express converts Objects and Arrays to JSON.
+
+using get function to help route, with a argument of relative path and a callback.
+
+could use res.redirect function to move a route to another, with 301 can route it paramently
+
+Middleware: functions executed sequentially that access request and response
+
+calling next() after response causes errors
+
+using app.use(express.static('dirName')) to access to static files
+
+dynamic routes, app.get('/dir/:name',function(req,res){});
+
+Extract duplication with app.param, get param from app.params and do the pre-condition
+
+express can take multiple handlers in as arguments and call them sequentially
+
+sendStatus can help more than status, sets both the status code and the response body
+
+using express.router to create a router instance, helping clean the code.
+
+using exports module to constuct the routing part of code.
+
+	var router = require('dir/routeName');
+	app.use('/routeRoot',router);
