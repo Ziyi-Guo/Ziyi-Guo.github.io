@@ -9,8 +9,8 @@
 title: Ziyi-Record
 email: kwokjona@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  <b>Ziyi Guo</b>, from China Mainland, doing exchange in <b>Aalto University</b>,
-  Finland. I'm doing my bachelor thesis on Computer Vision, learning Hadoop
+  <b>Ziyi Guo</b>, from China Mainland, doing Summer Job in <b>Aalto University</b>,
+  Finland. I'm doing my bachelor thesis on Computer Vision, learning Mean Stack
   at the same time.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ziyi-guo.github.io" # the base hostname & protocol for your site
