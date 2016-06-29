@@ -9,10 +9,9 @@
 title: Ziyi-Record
 email: kwokjona@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  <b>Ziyi Guo</b>, from China Mainland, doing Summer Job in
-  <a href="http://www.hiit.fi"><b>HIIT</b></a>--Helsinki Institute
-  for Information Technology, Finland. I'm working on front-end developing
-  with AngularJS.
+  <b>Ziyi Guo</b>, from China Mainland, doing Summer job in <b>HIIT</b>
+  --Helsinki Institute for Information Technolofy,Finland.
+  I'm working on front-end developing with AngularJS.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ziyi-guo.github.io" # the base hostname & protocol for your site
 facebook_username: Ziyi Guo
@@ -23,9 +22,6 @@ markdown: kramdown
 
 # other config
 timezone: Europe/Helsinki
-
-# dependencies
-gems: [jekyll-paginate]
 
 #defaults for posts
 defaults:
