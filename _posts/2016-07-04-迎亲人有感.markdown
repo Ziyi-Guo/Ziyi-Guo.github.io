@@ -1,5 +1,5 @@
 ---
-style:post
+style: post
 categories: Note
 title: 迎亲人有感
 ---
