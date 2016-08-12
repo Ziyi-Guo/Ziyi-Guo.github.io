@@ -1,0 +1,19 @@
+---
+style: post
+categories: Note
+title: 世界上最好的投资
+---
+{% include base.html %}
+
+那就是学习!!!!
+===
+
+![screen_shot][pic]
+
+图片来自大学一位同学,全系第一,报送top2.
+
+比我优秀太多,也比我努力太多.
+
+共勉
+
+[pic]: {{base}}/assets/best_investment.png
