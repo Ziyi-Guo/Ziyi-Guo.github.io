@@ -25,6 +25,7 @@ title: Machine Learning Note, P4
 
 7. Andrew smiled: As you've learned Linear/Logistic Regression, Gradient Descent, Advanced optimization and Regularization, you probably know more than quite a lot of engineers working in Silicon Valley who made tons of money. LOLLLL
 
+Stuck at installing Optimization Toolbox of matlab
 
 [regularized_cost_function]: {{base}}/assets/2016-08-15_rcf.png
 [gd_rcf_2]: {{base}}/assets/2016-08-15_gd_rcf.png
