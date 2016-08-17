@@ -77,7 +77,7 @@ Antti & Andrea,等等. 而在现代科学领域,真正推进科学进步的人,�
 
 [pic_1]: {{base}}/assets/2016-08-10_PhD_circle.jpg
 [blog_site]: http://matt.might.net/articles/phd-school-in-pictures/
-[blog_ziyi]: http://localhost:4000/note/2016/08/08/%E6%99%9A%E9%97%B4.html
+[blog_ziyi]: http://ziyi-guo.github.io/note/2016/08/08/%E6%99%9A%E9%97%B4.html
 [book_link]: https://www.amazon.cn/%E6%8A%8A%E6%97%B6%E9%97%B4%E5%BD%93%E4%BD%9C%E6%9C%8B%E5%8F%8B-%E6%9D%8E%E7%AC%91%E6%9D%A5/dp/B00FU3CRZI/ref=sr_1_1?ie=UTF8&qid=1470849825&sr=8-1&keywords=%E6%8A%8A%E6%97%B6%E9%97%B4%E5%BD%93%E4%BD%9C%E6%9C%8B%E5%8F%8B
 
 [book_pic]: {{base}}/assets/2016-08-10_Xiaolai_Li.jpg
