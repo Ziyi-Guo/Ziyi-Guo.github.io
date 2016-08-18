@@ -34,6 +34,8 @@ title: Machine Learning Note, P5
 
 7. Multiple Classification, just like one-vs-all
 
+8. Stop by matlab training with neuron network.
+
 
 
 [logistic_unit]: {{base}}/assets/2016-08-18_logistic_unit.png
