@@ -32,6 +32,8 @@ title: Machine Learning Note, P5
 
 6. Neuron Network is **learning it's own features**
 
+7. Multiple Classification, just like one-vs-all
+
 
 
 [logistic_unit]: {{base}}/assets/2016-08-18_logistic_unit.png
