@@ -1,6 +1,11 @@
 ---
-style: post
-title: Notes on Hashing 01
+layout: post
+title:  "Notes on Hashing 01"					# Title of the post
+modified: 2017-12-26				# Date
+category: Academic
+tags: []
+comments: true
+mathjax: true
 ---
 {% include base.html %}
 * ### Supervised Hashing for Image Retrieval via Image Representation Learning([AAAI2014](http://www.iis.sinica.edu.tw/~kevinlin311.tw/cvprw15.pdf "AAAI2017"))
