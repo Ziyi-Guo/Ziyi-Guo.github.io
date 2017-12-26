@@ -1,7 +1,7 @@
-title:            Site Title
-description:      Site description for the metas.
+title:            Researching with Ziyi
+description:      Doing acedemic works with ziyi (codes and papers).
 logo:             omikron.png
-disqus_shortname: shortname
+disqus_shortname: Me
 # Assign a default image for your site's header and footer
 default_bg:       default_bg.jpg
 search:           true
