@@ -1,6 +1,6 @@
 ---
 style: post
-categories: Note
+categories: Academic
 title: Machine Learning Note, P8
 ---
 {% include base.html %}
