@@ -55,3 +55,10 @@ class Solution:
         return res
 ```
 将3Sum问题转化为2Sum问题
+
+邻近的另一个问题3Sum Closest可以用类似方式进行解答
+>Given array nums = [-1, 2, 1, -4], and target = 1.
+
+>The sum that is closest to the target is 2. (-1 + 2 + 1 = 2). 
+
+不重新上代码了，逻辑类似，sort后对i进行遍历，每次左右两个指针，故为N^2
