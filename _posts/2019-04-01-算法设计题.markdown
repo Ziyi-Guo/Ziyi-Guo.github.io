@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "算法题--蚂蚁与可重复4求和"					
+modified: 2019-04-01			# Date
+category: Algorithm
+tags: []
+comments: true
+mathjax: true
+---
+{% include base.html %}
+
+蚂蚁题目如下：
+一个长度问M的水平杆上有N只蚂蚁爬来爬去，位置已知但他们的方向不确定，一旦到了杆边缘就落下，如果两只方向相反的蚂蚁相遇则同时返回，问这N只蚂蚁全部落下的最短时间和最长时间。
+
+如果所有可能的方向进行遍历，那么每只蚂蚁方向有两种选择，那么N只蚂蚁共有$$2^N$$中组合，复杂度过大，那么进行遍历计算显然是不可能的。
+
+作者们巧妙的选择忽略蚂蚁之间的不同性，将两只相遇并反向行走的蚂蚁视为原来的按照同一方向走的蚂蚁即可，那么最短时间就是蚂蚁们朝最近边缘行走的蚂蚁所用的最长时间，而最长时间即为蚂蚁们朝较远边缘行走的蚂蚁所用的最长时间。直接转化为$$O(N)$$复杂度。
+
+简略代码如下:
+
+```c++
+int L, n, loc[maxN];
+
+void solve(){
+  int minT=0, maxT=0;
+  for(int i=0; i<n; i++){
+    minT = max(minT, min(loc[i], L-loc[i]));
+  }
+  for(int i=0; i<n; i++){
+    maxT = max(maxT, max(loc[i], L-loc[i]));
+  }
+  printf("%d %d",minT, maxT);
+}
+```
+
+
+
+可重复4求和题目：N张纸牌中，有放回的抽出4张，希望知道是否可能组成目标数字tar。
+
+最简单的4重循环复杂度$O(N^4)$，疯了才会选。那么3重循环嵌套二分搜索，先排序，故而有$O(NlogN)+O(N^3logN)=O(N^3logN)$，我能想到的最优是，两层循环中嵌套左右两pointer进行搜索，复杂度为$O(N^3)$这么远了。那么文中给了个最优简直牛皮，因为是有放回的抽取，所以排序后先计算一波$c+d$进而排序，然后在二重循环内进行二分搜索，复杂度是$O(N^2)+O(N^2log(N^2))+O(N^2log(N^2))=O(N^2logN)$。示意代码如下
+
+```c++
+int N, sum[NxN], nums[N], tar;
+
+void solve(){
+  for(int c=0;c<N;c++){
+    for(int d=0;d<N;d++){
+      sums[c*N+d] = nums[c]+nums[d];
+    }
+  }
+  sums=sort(sums);
+
+  for(int a=0;a<N;a++){
+    for(int b=0;b<N;b++){
+      if bin_search(sums, tar-nums[a]-nums[b])
+        return True;
+    }
+  }
+  return False;
+}
+
+```
+
